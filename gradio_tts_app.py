@@ -90,4 +90,9 @@ if __name__ == "__main__":
     demo.queue(
         max_size=50,
         default_concurrency_limit=1,
-    ).launch(share=True)
+    ).launch(
+        server_name="0.0.0.0",  # 👈 important
+        server_port=7860,       # 👈 must match Coolify
+        share=False             # 👈 disable Gradio tunneling
+    )
+
